@@ -67,13 +67,13 @@ ARCHITECTURE behavioral OF Nombre_Entidad_testbench IS
     -- SIGNAL signal_y_net: std_logic_vector(7 downto 0); 
     -- SIGNAL signal_gcd_net: std_logic_vector(7 downto 0);
     
-    SIGNAL signal_clk_net         : in  std_logic;
-    SIGNAL signal_reset_net       : in  std_logic;
-    SIGNAL signal_input_net       : in  std_logic_vector(1 downto 0);
-    SIGNAL signal_a_net           : in  std_logic_vector(7 downto 0);
-    SIGNAL signal_b_net           : in  std_logic_vector(7 downto 0);
-    SIGNAL signal_gcd_output_net  : out std_logic_vector(7 downto 0);
-    SIGNAL signal_output_net      : out std_logic;
+    SIGNAL signal_clk_net         : std_logic;
+    SIGNAL signal_reset_net       : std_logic;
+    SIGNAL signal_input_net       : std_logic_vector(1 downto 0);
+    SIGNAL signal_a_net           : std_logic_vector(7 downto 0);
+    SIGNAL signal_b_net           : std_logic_vector(7 downto 0);
+    SIGNAL signal_gcd_output_net  : std_logic_vector(7 downto 0);
+    SIGNAL signal_output_net      : std_logic;
 
 BEGIN 
 
@@ -101,32 +101,76 @@ Testbench_Desc_Name: PROCESS
     BEGIN  
         signal_clk_net      <= '0';
         signal_reset_net    <= '0';
-        signal_input_net    <= "00"; 
-        signal_a_net        <= "11001100";
+        signal_input_net    <= "00";
+        signal_a_net        <= "11001100"; 
         signal_b_net        <= "01100110";
-        WAIT FOR 250 NS; 
+        WAIT FOR 50 NS; 
 
-        signal_clk_net      <= '1';
-        signal_reset_net    <= '0';
-        signal_input_net    <= "00"; 
-        signal_a_net        <= "11001100";
-        signal_b_net        <= "01100110";
-        WAIT FOR 250 NS; 
+        signal_clk_net <= '1';        
+        WAIT FOR 50 NS; 
         
-        signal_clk_net      <= '0';
-        signal_reset_net    <= '0';
-        signal_input_net    <= "00"; 
-        signal_a_net        <= "11001100";
-        signal_b_net        <= "01100110";
-        WAIT FOR 250 NS; 
+        signal_clk_net <= '0'; 
+        WAIT FOR 50 NS; 
         
-        signal_clk_net      <= '1';
-        signal_reset_net    <= '0';
-        signal_input_net    <= "00"; 
-        signal_a_net        <= "11001100";
-        signal_b_net        <= "01100110";
-        WAIT FOR 250 NS; 
+        signal_clk_net <= '1'; 
+        WAIT FOR 50 NS; 
 
+        signal_clk_net <= '0'; 
+        WAIT FOR 50 NS; 
+
+        signal_clk_net <= '1'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '0'; 
+        WAIT FOR 50 NS; 
+        
+        signal_input_net    <= "01";
+        signal_clk_net      <= '1'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '0'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '1'; 
+        WAIT FOR 50 NS; 
+        
+        signal_input_net    <= "00";
+        signal_clk_net <= '0'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '1'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '0'; 
+        WAIT FOR 50 NS; 
+        
+        signal_input_net    <= "11";
+        signal_clk_net      <= '1'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '0'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '1'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '0'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '1'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '0'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '1'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '0'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '1'; 
+        WAIT FOR 50 NS; 
 
         WAIT;  
     END PROCESS; 

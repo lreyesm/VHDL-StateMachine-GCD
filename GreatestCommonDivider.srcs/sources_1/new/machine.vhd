@@ -47,81 +47,109 @@ ARCHITECTURE state_machine_arch OF state_machine IS
 
    COMPONENT gcd1 is
       port(
-         x: in std_logic_vector(7 downto 0);
-         y: in std_logic_vector(7 downto 0);
+         x  : in std_logic_vector(7 downto 0);
+         y  : in std_logic_vector(7 downto 0);
          gcd: out std_logic_vector(7 downto 0)
       );
    END COMPONENT; 
 
    TYPE STATE_TYPE IS (init, cargar, opera, aa, bb, fin);
-   SIGNAL state   : STATE_TYPE;
-
+   SIGNAL state               : STATE_TYPE;
+   SIGNAL signal_gcd_output   : std_logic_vector(7 downto 0);
+   
 BEGIN
+   gcdi: gcd1 port map(a, b, signal_gcd_output); 
+
    PROCESS (clk, reset)
    BEGIN
+
       IF reset = '1' THEN
          state <= init;
+
       ELSIF (clk'EVENT AND clk = '1') THEN
+
          CASE state IS
+
             WHEN init=>
                IF input = "00" OR input = "01" THEN
                   state <= cargar;
                ELSE
                   state <= init;
                END IF;
+
             WHEN cargar=>
                IF input = "00" OR input = "01" THEN
                   state <= opera;
                ELSE
                   state <= cargar;
                END IF;
+
             WHEN opera=>
                IF input = "00" THEN
-                  state <= aa;
+                  state <= bb;
                ELSIF input = "01" THEN
-                  state <= bb; 
+                  state <= aa; 
                ELSIF input = "10" OR input = "11" THEN
                   state <= fin; 
                ELSE
                   state <= opera;
                END IF;
+
             WHEN aa=>
-               IF input = "00" OR input = "01" THEN
+               IF input = "00" THEN
                   state <= opera;
                ELSE
-                  state <= aa;
+                  state <= opera;
                END IF;
+
             WHEN bb=>
-               IF input = "00" OR input = "01" THEN
+               IF input = "00" THEN
                   state <= opera;
                ELSE
-                  state <= bb;
+                  state <= opera;
                END IF;
+               
             WHEN fin=>
                IF input = "00" OR input = "01" THEN
                   state <= init;
                ELSE
                   state <= fin;
                END IF;
+
          END CASE;
+
       END IF;
+
    END PROCESS;
    
    PROCESS (state)
    BEGIN
       CASE state IS
+
          WHEN init =>
             output <= '0';
+            gcd_output <= "00000000";
+            
          WHEN cargar =>
             output <= '0';
+            gcd_output <= "00000000";
+            
          WHEN opera =>
             output <= '0';
+            gcd_output <= "00000000";
+            
          WHEN aa =>
             output <= '0';
+            gcd_output <= "00000000";
+            
          WHEN bb =>
             output <= '0';
+            gcd_output <= "00000000";
+
          WHEN fin =>
+            gcd_output <= signal_gcd_output;
             output <= '1';
+            
       END CASE;
    END PROCESS;
    

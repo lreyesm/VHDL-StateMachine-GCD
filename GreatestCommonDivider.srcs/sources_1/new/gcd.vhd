@@ -34,9 +34,9 @@ use IEEE.STD_LOGIC_unsigned.ALL;
 
 entity gcd1 is
     port(
-        x: in std_logic_vector(7 downto 0);
-        y: in std_logic_vector(7 downto 0);
-        gcd: out std_logic_vector(7 downto 0)
+        x       : in std_logic_vector(7 downto 0);
+        y       : in std_logic_vector(7 downto 0);
+        gcd     : out std_logic_vector(7 downto 0)
     );
 
 end gcd1;
@@ -46,15 +46,15 @@ begin
     process(x, y)
     variable xv, yv: STD_LOGIC_VECTOR(7 downto 0);
     begin
-        xv := x;
-        yv := y;
-        while(xv /= yv) loop
-            if xv < yv then
-                yv := yv -xv;
-            else
-                xv := xv - yv;
-            end if;
-        end loop;
-        gcd <= xv;
+            xv := x;
+            yv := y;
+            while(xv /= yv) loop
+                if xv < yv then
+                    yv := yv -xv;
+                else
+                    xv := xv - yv;
+                end if;
+            end loop;
+            gcd <= xv;
     end process;
 end gcd1;
