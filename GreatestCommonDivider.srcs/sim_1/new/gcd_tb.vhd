@@ -99,6 +99,31 @@ PORT MAP(
 -- ****************************** PROCESS *******************************
 Testbench_Desc_Name: PROCESS 
     BEGIN  
+
+        -- signal_x_net        <= "11001100"; 
+        -- signal_y_net        <= "01100110";
+        -- WAIT FOR 50 NS; 
+
+        -- signal_x_net        <= "11001100"; 
+        -- signal_y_net        <= "01000110";
+        -- WAIT FOR 50 NS; 
+
+        -- signal_x_net        <= "11001100"; 
+        -- signal_y_net        <= "01100100";
+        -- WAIT FOR 50 NS; 
+
+        -- signal_x_net        <= "01001100"; 
+        -- signal_y_net        <= "00100110";
+        -- WAIT FOR 50 NS; 
+
+        -- signal_x_net        <= "00001100"; 
+        -- signal_y_net        <= "00000110";
+        -- WAIT FOR 50 NS; 
+
+        -- signal_x_net        <= "11001000"; 
+        -- signal_y_net        <= "01100010";
+        -- WAIT FOR 50 NS; 
+
         signal_clk_net      <= '0';
         signal_reset_net    <= '0';
         signal_input_net    <= "00";
@@ -166,6 +191,111 @@ Testbench_Desc_Name: PROCESS
         signal_clk_net <= '1'; 
         WAIT FOR 50 NS; 
         
+        signal_clk_net <= '0'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '1'; 
+        WAIT FOR 50 NS;
+
+        signal_clk_net <= '0'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '1'; 
+        WAIT FOR 50 NS; 
+
+        signal_clk_net      <= '0';
+        signal_reset_net    <= '0';
+        signal_input_net    <= "00";
+        signal_a_net        <= "11001100"; 
+        signal_b_net        <= "00000110";
+        WAIT FOR 50 NS; 
+
+        signal_clk_net <= '1';        
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '0'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '1'; 
+        WAIT FOR 50 NS; 
+
+        signal_clk_net <= '0'; 
+        WAIT FOR 50 NS; 
+
+        signal_clk_net <= '1'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '0'; 
+        WAIT FOR 50 NS; 
+        
+        signal_input_net    <= "01";
+        signal_clk_net      <= '1'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '0'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '1'; 
+        WAIT FOR 50 NS; 
+        
+        signal_input_net    <= "00";
+        signal_clk_net <= '0'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '1'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '0'; 
+        WAIT FOR 50 NS; 
+        
+        signal_input_net    <= "11";
+        signal_clk_net      <= '1'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '0'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '1'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '0'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '1'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '0'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '1'; 
+        WAIT FOR 50 NS; 
+        
+        signal_reset_net <= '1';
+        signal_clk_net <= '0'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '1'; 
+        WAIT FOR 50 NS;
+        
+        signal_reset_net <= '0';
+        signal_clk_net <= '0'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '1'; 
+        WAIT FOR 50 NS; 
+
+        signal_clk_net <= '0'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '1'; 
+        WAIT FOR 50 NS; 
+
+        signal_clk_net <= '0'; 
+        WAIT FOR 50 NS; 
+        
+        signal_clk_net <= '1'; 
+        WAIT FOR 50 NS; 
+
         signal_clk_net <= '0'; 
         WAIT FOR 50 NS; 
         
