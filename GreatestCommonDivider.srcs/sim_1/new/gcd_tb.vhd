@@ -43,84 +43,92 @@ END Nombre_Entidad_testbench;
 
 ARCHITECTURE behavioral OF Nombre_Entidad_testbench IS  
     
-    COMPONENT gcd1 is
+    -- COMPONENT gcd1 is
+    --     port(
+    --         x: in std_logic_vector(7 downto 0);
+    --         y: in std_logic_vector(7 downto 0);
+    --         gcd: out std_logic_vector(7 downto 0)
+    --     );
+    -- END COMPONENT;   
+
+    COMPONENT state_machine is
         port(
-            x: in std_logic_vector(7 downto 0);
-            y: in std_logic_vector(7 downto 0);
-            gcd: out std_logic_vector(7 downto 0)
+            clk         : in  std_logic;
+            reset       : in  std_logic;
+            input       : in  std_logic_vector(1 downto 0);
+            a           : in  std_logic_vector(7 downto 0);
+            b           : in  std_logic_vector(7 downto 0);
+            gcd_output  : out std_logic_vector(7 downto 0);
+            output      : out std_logic
         );
     END COMPONENT; 
     
-    SIGNAL signal_x_net: std_logic_vector(7 downto 0); 
-    SIGNAL signal_y_net: std_logic_vector(7 downto 0); 
-    SIGNAL signal_gcd_net: std_logic_vector(7 downto 0); 
+    -- SIGNAL signal_x_net: std_logic_vector(7 downto 0); 
+    -- SIGNAL signal_y_net: std_logic_vector(7 downto 0); 
+    -- SIGNAL signal_gcd_net: std_logic_vector(7 downto 0);
+    
+    SIGNAL signal_clk_net         : in  std_logic;
+    SIGNAL signal_reset_net       : in  std_logic;
+    SIGNAL signal_input_net       : in  std_logic_vector(1 downto 0);
+    SIGNAL signal_a_net           : in  std_logic_vector(7 downto 0);
+    SIGNAL signal_b_net           : in  std_logic_vector(7 downto 0);
+    SIGNAL signal_gcd_output_net  : out std_logic_vector(7 downto 0);
+    SIGNAL signal_output_net      : out std_logic;
 
 BEGIN 
 
--- UUT: ALU  
-UUT: gcd1
+-- UUT: gcd1
+UUT: state_machine
 -- ****************************** MAPPING *******************************
-PORT MAP(   x   => signal_x_net, 
-            y   => signal_y_net, 
-            gcd   => signal_gcd_net
+-- PORT MAP(   x   => signal_x_net, 
+--             y   => signal_y_net, 
+--             gcd   => signal_gcd_net
+--         );
+
+PORT MAP(   
+            clk         => signal_clk_net,
+            reset       => signal_reset_net,
+            input       => signal_input_net,
+            a           => signal_a_net,
+            b           => signal_b_net,
+            gcd_output  => signal_gcd_output_net,
+            output      => signal_output_net
         ); 
 -- ********************************************************************** 
 
 -- ****************************** PROCESS *******************************
 Testbench_Desc_Name: PROCESS 
     BEGIN  
-        signal_x_net <= "10101010"; 
-        signal_y_net <= "01010101"; 
+        signal_clk_net      <= '0';
+        signal_reset_net    <= '0';
+        signal_input_net    <= "00"; 
+        signal_a_net        <= "11001100";
+        signal_b_net        <= "01100110";
         WAIT FOR 250 NS; 
 
-        signal_x_net <= "11001100"; 
-        signal_y_net <= "01100110"; 
+        signal_clk_net      <= '1';
+        signal_reset_net    <= '0';
+        signal_input_net    <= "00"; 
+        signal_a_net        <= "11001100";
+        signal_b_net        <= "01100110";
+        WAIT FOR 250 NS; 
+        
+        signal_clk_net      <= '0';
+        signal_reset_net    <= '0';
+        signal_input_net    <= "00"; 
+        signal_a_net        <= "11001100";
+        signal_b_net        <= "01100110";
+        WAIT FOR 250 NS; 
+        
+        signal_clk_net      <= '1';
+        signal_reset_net    <= '0';
+        signal_input_net    <= "00"; 
+        signal_a_net        <= "11001100";
+        signal_b_net        <= "01100110";
         WAIT FOR 250 NS; 
 
-        
-        signal_x_net <= "11101110"; 
-        signal_y_net <= "10001000"; 
-        WAIT FOR 250 NS; 
-        
-        signal_x_net <= "00010001"; 
-        signal_y_net <= "10011001"; 
-        WAIT FOR 250 NS;
 
         WAIT;  
     END PROCESS; 
 END; 
--- Testbench_Desc_Name: PROCESS 
---     BEGIN  
---         signal_ai_net <= '1'; 
---         signal_bi_net <= '0'; 
---         signal_cin_net <= '0'; 
---         signal_signo_net <= '0';
---         signal_opera_net <= "01"; 
---         WAIT FOR 250 NS; 
-
---         signal_ai_net <= '1'; 
---         signal_bi_net <= '1'; 
---         signal_cin_net <= '0';
---         signal_signo_net <= '0';
---         signal_opera_net <= "01";
---         WAIT FOR 250 NS; 
-
-        
---         signal_ai_net <= '0'; 
---         signal_bi_net <= '1'; 
---         signal_cin_net <= '0';
---         signal_signo_net <= '0';
---         signal_opera_net <= "11";
---         WAIT FOR 250 NS; 
-        
---         signal_ai_net <= '0'; 
---         signal_bi_net <= '0'; 
---         signal_cin_net <= '0';
---         signal_signo_net <= '0';
---         signal_opera_net <= "00";
---         WAIT FOR 250 NS;
-
---         WAIT;  
---     END PROCESS; 
--- END; 
 -- ******************************************************************

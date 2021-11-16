@@ -20,7 +20,7 @@
 
 
 library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.std_logic_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -33,39 +33,75 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY state_machine IS
    PORT(
-      clk      : IN   STD_LOGIC;
-      input    : IN   STD_LOGIC;
-      reset    : IN   STD_LOGIC;
-      output   : OUT  STD_LOGIC_VECTOR(1 downto 0));
+      clk         : in  std_logic;
+      reset       : in  std_logic;
+      input       : in  std_logic_vector(1 downto 0);
+      a           : in  std_logic_vector(7 downto 0);
+      b           : in  std_logic_vector(7 downto 0);
+      gcd_output  : out std_logic_vector(7 downto 0);
+      output      : out std_logic
+   );
 END state_machine;
 
-ARCHITECTURE a OF state_machine IS
-   TYPE STATE_TYPE IS (s0, s1, s2);
+ARCHITECTURE state_machine_arch OF state_machine IS
+
+   COMPONENT gcd1 is
+      port(
+         x: in std_logic_vector(7 downto 0);
+         y: in std_logic_vector(7 downto 0);
+         gcd: out std_logic_vector(7 downto 0)
+      );
+   END COMPONENT; 
+
+   TYPE STATE_TYPE IS (init, cargar, opera, aa, bb, fin);
    SIGNAL state   : STATE_TYPE;
+
 BEGIN
    PROCESS (clk, reset)
    BEGIN
       IF reset = '1' THEN
-         state <= s0;
+         state <= init;
       ELSIF (clk'EVENT AND clk = '1') THEN
          CASE state IS
-            WHEN s0=>
-               IF input = '1' THEN
-                  state <= s1;
+            WHEN init=>
+               IF input = "00" OR input = "01" THEN
+                  state <= cargar;
                ELSE
-                  state <= s0;
+                  state <= init;
                END IF;
-            WHEN s1=>
-               IF input = '1' THEN
-                  state <= s2;
+            WHEN cargar=>
+               IF input = "00" OR input = "01" THEN
+                  state <= opera;
                ELSE
-                  state <= s1;
+                  state <= cargar;
                END IF;
-            WHEN s2=>
-               IF input = '1' THEN
-                  state <= s0;
+            WHEN opera=>
+               IF input = "00" THEN
+                  state <= aa;
+               ELSIF input = "01" THEN
+                  state <= bb; 
+               ELSIF input = "10" OR input = "11" THEN
+                  state <= fin; 
                ELSE
-                  state <= s2;
+                  state <= opera;
+               END IF;
+            WHEN aa=>
+               IF input = "00" OR input = "01" THEN
+                  state <= opera;
+               ELSE
+                  state <= aa;
+               END IF;
+            WHEN bb=>
+               IF input = "00" OR input = "01" THEN
+                  state <= opera;
+               ELSE
+                  state <= bb;
+               END IF;
+            WHEN fin=>
+               IF input = "00" OR input = "01" THEN
+                  state <= init;
+               ELSE
+                  state <= fin;
                END IF;
          END CASE;
       END IF;
@@ -74,13 +110,19 @@ BEGIN
    PROCESS (state)
    BEGIN
       CASE state IS
-         WHEN s0 =>
-            output <= "00";
-         WHEN s1 =>
-            output <= "01";
-         WHEN s2 =>
-            output <= "10";
+         WHEN init =>
+            output <= '0';
+         WHEN cargar =>
+            output <= '0';
+         WHEN opera =>
+            output <= '0';
+         WHEN aa =>
+            output <= '0';
+         WHEN bb =>
+            output <= '0';
+         WHEN fin =>
+            output <= '1';
       END CASE;
    END PROCESS;
    
-END a;
+END state_machine_arch;
