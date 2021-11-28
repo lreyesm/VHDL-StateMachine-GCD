@@ -37,19 +37,11 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 
 -- *************************** Entity name ********************************* 
-ENTITY Nombre_Entidad_testbench IS 
-END Nombre_Entidad_testbench; 
+ENTITY state_machine_testbench IS 
+END state_machine_testbench; 
 -- ************************************************************************* 
 
-ARCHITECTURE behavioral OF Nombre_Entidad_testbench IS  
-    
-    -- COMPONENT gcd1 is
-    --     port(
-    --         x: in std_logic_vector(7 downto 0);
-    --         y: in std_logic_vector(7 downto 0);
-    --         gcd: out std_logic_vector(7 downto 0)
-    --     );
-    -- END COMPONENT;   
+ARCHITECTURE behavioral OF state_machine_testbench IS   
 
     COMPONENT state_machine is
         port(
@@ -62,11 +54,7 @@ ARCHITECTURE behavioral OF Nombre_Entidad_testbench IS
             output      : out std_logic
         );
     END COMPONENT; 
-    
-    -- SIGNAL signal_x_net: std_logic_vector(7 downto 0); 
-    -- SIGNAL signal_y_net: std_logic_vector(7 downto 0); 
-    -- SIGNAL signal_gcd_net: std_logic_vector(7 downto 0);
-    
+ 
     SIGNAL signal_clk_net         : std_logic;
     SIGNAL signal_reset_net       : std_logic;
     SIGNAL signal_input_net       : std_logic_vector(1 downto 0);
@@ -77,14 +65,8 @@ ARCHITECTURE behavioral OF Nombre_Entidad_testbench IS
 
 BEGIN 
 
--- UUT: gcd1
 UUT: state_machine
 -- ****************************** MAPPING *******************************
--- PORT MAP(   x   => signal_x_net, 
---             y   => signal_y_net, 
---             gcd   => signal_gcd_net
---         );
-
 PORT MAP(   
             clk         => signal_clk_net,
             reset       => signal_reset_net,
@@ -98,31 +80,7 @@ PORT MAP(
 
 -- ****************************** PROCESS *******************************
 Testbench_Desc_Name: PROCESS 
-    BEGIN  
-
-        -- signal_x_net        <= "11001100"; 
-        -- signal_y_net        <= "01100110";
-        -- WAIT FOR 50 NS; 
-
-        -- signal_x_net        <= "11001100"; 
-        -- signal_y_net        <= "01000110";
-        -- WAIT FOR 50 NS; 
-
-        -- signal_x_net        <= "11001100"; 
-        -- signal_y_net        <= "01100100";
-        -- WAIT FOR 50 NS; 
-
-        -- signal_x_net        <= "01001100"; 
-        -- signal_y_net        <= "00100110";
-        -- WAIT FOR 50 NS; 
-
-        -- signal_x_net        <= "00001100"; 
-        -- signal_y_net        <= "00000110";
-        -- WAIT FOR 50 NS; 
-
-        -- signal_x_net        <= "11001000"; 
-        -- signal_y_net        <= "01100010";
-        -- WAIT FOR 50 NS; 
+    BEGIN       
 
         signal_clk_net      <= '0';
         signal_reset_net    <= '0';

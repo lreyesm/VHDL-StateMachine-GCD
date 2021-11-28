@@ -1,0 +1,9 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../GreatestCommonDivider.srcs/sources_1/new/gcd.vhd" \
+"../../../../GreatestCommonDivider.srcs/sources_1/new/machine.vhd" \
+"../../../../GreatestCommonDivider.srcs/sources_1/new/top_layer.vhd" \
+"../../../../GreatestCommonDivider.srcs/sim_1/new/top_layer_tb.vhd" \
+
+# Do not sort compile order
+nosort

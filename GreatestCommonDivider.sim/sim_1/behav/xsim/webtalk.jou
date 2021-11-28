@@ -1,12 +1,12 @@
 #-----------------------------------------------------------
-# Webtalk v2018.3 (64-bit)
-# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
-# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Mon Nov 15 19:20:04 2021
-# Process ID: 3380
-# Current directory: C:/Users/Docencia/Desktop/Entregable3-20211108T171246Z-001/GreatestCommonDivider/GreatestCommonDivider.sim/sim_1/behav/xsim
-# Command line: wbtcv.exe -mode batch -source C:/Users/Docencia/Desktop/Entregable3-20211108T171246Z-001/GreatestCommonDivider/GreatestCommonDivider.sim/sim_1/behav/xsim/xsim.dir/Nombre_Entidad_testbench_behav/webtalk/xsim_webtalk.tcl -notrace
-# Log file: C:/Users/Docencia/Desktop/Entregable3-20211108T171246Z-001/GreatestCommonDivider/GreatestCommonDivider.sim/sim_1/behav/xsim/webtalk.log
-# Journal file: C:/Users/Docencia/Desktop/Entregable3-20211108T171246Z-001/GreatestCommonDivider/GreatestCommonDivider.sim/sim_1/behav/xsim\webtalk.jou
+# Webtalk v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Sun Nov 28 03:21:56 2021
+# Process ID: 15468
+# Current directory: C:/Users/Mandefro/VHDL-StateMachine-GCD/GreatestCommonDivider.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source C:/Users/Mandefro/VHDL-StateMachine-GCD/GreatestCommonDivider.sim/sim_1/behav/xsim/xsim.dir/top_layer_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: C:/Users/Mandefro/VHDL-StateMachine-GCD/GreatestCommonDivider.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: C:/Users/Mandefro/VHDL-StateMachine-GCD/GreatestCommonDivider.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
-source C:/Users/Docencia/Desktop/Entregable3-20211108T171246Z-001/GreatestCommonDivider/GreatestCommonDivider.sim/sim_1/behav/xsim/xsim.dir/Nombre_Entidad_testbench_behav/webtalk/xsim_webtalk.tcl -notrace
+source C:/Users/Mandefro/VHDL-StateMachine-GCD/GreatestCommonDivider.sim/sim_1/behav/xsim/xsim.dir/top_layer_tb_behav/webtalk/xsim_webtalk.tcl -notrace

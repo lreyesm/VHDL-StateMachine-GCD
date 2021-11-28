@@ -1,7 +1,20 @@
-Vivado Simulator 2018.3
-Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 2bfcc7cbc5834f6f8ff52b3e26f27821 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Nombre_Entidad_testbench_behav xil_defaultlib.Nombre_Entidad_testbench -log elaborate.log 
+Vivado Simulator v2021.1
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto 2bfcc7cbc5834f6f8ff52b3e26f27821 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot top_layer_tb_behav xil_defaultlib.top_layer_tb -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling architecture comporta of entity xil_defaultlib.gcd1 [gcd1_default]
+Compiling architecture state_machine_arch of entity xil_defaultlib.state_machine [state_machine_default]
+Compiling architecture behavioral of entity xil_defaultlib.top_layer [top_layer_default]
+Compiling architecture behavioral of entity xil_defaultlib.top_layer_tb
+Built simulation snapshot top_layer_tb_behav

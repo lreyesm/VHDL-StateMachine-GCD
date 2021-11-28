@@ -1,6 +1,9 @@
-0.6
-2018.3
-Dec  7 2018
-00:33:28
-C:/Users/Docencia/Desktop/Entregable3-20211108T171246Z-001/GreatestCommonDivider/GreatestCommonDivider.srcs/sim_1/new/gcd_tb.vhd,1637000366,vhdl,,,,nombre_entidad_testbench,,,,,,,,
-C:/Users/Docencia/Desktop/Entregable3-20211108T171246Z-001/GreatestCommonDivider/GreatestCommonDivider.srcs/sources_1/new/gcd.vhd,1637000382,vhdl,,,,gcd1,,,,,,,,
+0.7
+2020.2
+Jun 10 2021
+20:04:57
+C:/Users/Mandefro/VHDL-StateMachine-GCD/GreatestCommonDivider.srcs/sim_1/new/gcd_tb.vhd,1638061012,vhdl,,,,state_machine_testbench,,,,,,,,
+C:/Users/Mandefro/VHDL-StateMachine-GCD/GreatestCommonDivider.srcs/sim_1/new/top_layer_tb.vhd,1638066104,vhdl,,,,top_layer_tb,,,,,,,,
+C:/Users/Mandefro/VHDL-StateMachine-GCD/GreatestCommonDivider.srcs/sources_1/new/gcd.vhd,1638056348,vhdl,,,,gcd1,,,,,,,,
+C:/Users/Mandefro/VHDL-StateMachine-GCD/GreatestCommonDivider.srcs/sources_1/new/machine.vhd,1638056348,vhdl,,,,state_machine,,,,,,,,
+C:/Users/Mandefro/VHDL-StateMachine-GCD/GreatestCommonDivider.srcs/sources_1/new/top_layer.vhd,1638066066,vhdl,,,,top_layer,,,,,,,,
